@@ -18,8 +18,13 @@ module.exports = function(app){
         */
 
         connection.query('select * from noticias', function(error, result){
-            console.log(error);
-            res.send(result);
+
+            // res.send(result); -> aqui eu mostro na tela o resultado de uma variavel
+
+            /*
+                a linha abaixo eu passo o resultado para uma view
+            */
+           res.render("noticias/noticias", {noticias : result});
         });
 
         

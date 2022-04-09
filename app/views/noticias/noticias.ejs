@@ -2,11 +2,39 @@
 	<html lang="pt-br">
 		<head>
 			<meta charset="utf-8"/>
-			<title>Not�cias</title>
+			<title>Noticias</title>
+			<style type="text/css">
+				table, tr, td, th{
+					border: 1px solid #333;
+				}
+			</style>
 		</head>
 	<body>
 
-		<h1>Not�cias</h1>
+		<h1>Noticias</h1>
 
+		<table>
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Título</th>
+					<th>Notícia</th>
+					<th>Data de pulicação</th>
+				</tr>
+			</thead>
+			<tbody>
+				
+				<% for(var i=0;i<noticias.length;i++){ %>
+					
+					<tr>
+						<td><%= noticias[i].id_noticia  %></td>
+						<td><%= noticias[i].titulo %></td>
+						<td><%= noticias[i].noticia %></td>
+						<td><%= noticias[i].data_criacao %></td>
+					</tr>
+
+				<% } %>
+			</tbody>
+		</table>
 	</body>
 </html>
