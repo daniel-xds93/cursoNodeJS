@@ -3,9 +3,11 @@ var dbConnection = require('../../config/dbConnection');
 module.exports = function(app){
 
     // a linha abaixo atribui a variavel a conexão do banco
-    var connection = dbConnection();
+    //var connection = dbConnection();
 
-    app.get('/noticias', function(req, res){
+   
+
+     app.get('/noticias', function(req, res){
         // a linha abaixo importa o modulo de conexao do mysql
         /*var mysql = require('mysql');
 
@@ -22,6 +24,9 @@ module.exports = function(app){
             ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '1234'
         */
 
+         //a linha abaixo eu atribuo a conexão com o banco através do parametro passado
+        var connection = app.config.dbConnection();
+
         connection.query('select * from noticias', function(error, result){
 
             // res.send(result); -> aqui eu mostro na tela o resultado de uma variavel
@@ -29,10 +34,11 @@ module.exports = function(app){
             /*
                 a linha abaixo eu passo o resultado para uma view
             */
-           res.render("noticias/noticias", {noticias : result});
+            
+                res.render("noticias/noticias", {noticias : result});
         });
 
         
         //res.render('noticias/noticias');
-    });
+     });
 };

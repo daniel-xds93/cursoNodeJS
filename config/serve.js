@@ -13,6 +13,9 @@ app.set('view engine', 'ejs');
 app.set('views', './app/views');
 
 // inclusão do diretório routes deve ser feito após a execusao do express
-consign().include('app/routes').into(app); // com isso eu posso desconsiderar as rotas que foram inseridas no app.js 
+consign()
+    .include('app/routes')
+    .then('config/dbConnection.js') // then() -> exporta o modulo de conficuração do banco de dados
+    .into(app); // com isso eu posso desconsiderar as rotas que foram inseridas no app.js 
 
 module.exports = app;
