@@ -1,5 +1,8 @@
 var app = require('./config/serve');
 
+/*
+    ******* Comentei essas rotas por que instalei o consign e ja criei as rotas no server.js
+    
 var rotaNoticias = require('./app/routes/noticias');
 // a linha abaixo executa a função
 rotaNoticias(app);
@@ -9,6 +12,8 @@ rotaHome(app);
 
 // a linha abaixo faz referencia e ja executa o comando com ()();
 var rotaFormInclusaoNoticia = require('./app/routes/formulario_inclusao_noticia')(app);
+
+*/
 
 /*
     app.get('/', function(req, res){
