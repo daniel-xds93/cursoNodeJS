@@ -16,6 +16,7 @@ app.set('views', './app/views');
 consign()
     .include('app/routes')
     .then('config/dbConnection.js') // then() -> exporta o modulo de conficuração do banco de dados
+    .then('app/models')
     .into(app); // com isso eu posso desconsiderar as rotas que foram inseridas no app.js 
 
 module.exports = app;

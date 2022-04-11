@@ -27,7 +27,12 @@ module.exports = function(app){
          //a linha abaixo eu atribuo a conexão com o banco através do parametro passado
         var connection = app.config.dbConnection();
 
-        connection.query('select * from noticias', function(error, result){
+        var noticiasModel = app.app.models.noticiasModel;
+
+        noticiasModel.getNoticias(connection, function(error, result){
+
+        // a linha abaixo foi trocada pela de cima quando inclui o model
+        //connection.query('select * from noticias', function(error, result){
 
             // res.send(result); -> aqui eu mostro na tela o resultado de uma variavel
 
