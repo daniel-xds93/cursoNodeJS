@@ -3,6 +3,9 @@ var express = require('express');
 // a linha abaixo importa o módulo consign
 var consign = require('consign');
 
+// adicionando body-parser 
+var bodyParser = require('body-parser');
+
 // a linha abaixo executa a função do express
 var app = express();
 
@@ -11,6 +14,9 @@ app.set('view engine', 'ejs');
 
 // a linha abaixo configura o diretorio de views padrão
 app.set('views', './app/views');
+
+// a linha abaixo executa o body-parser e a execusão deve ser feita antes das linhas de rotas
+app.use(bodyParser.urlencoded({extended: true}));
 
 // inclusão do diretório routes deve ser feito após a execusao do express
 consign()
