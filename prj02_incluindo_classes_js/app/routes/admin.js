@@ -12,7 +12,9 @@ module.exports = function(application){
 
         // 1° recuperar a conexão
         var connection = application.config.dbConnection();
-        var noticiasModel = application.app.models.noticiasModel;
+
+        // como estou retornando uma função aqui uso também o new para instanciar
+        var noticiasModel = new application.app.models.noticiasModel;
 
         // 2º recuperar a model
         noticiasModel.salvarNoticia(noticia, connection, function(error, result){

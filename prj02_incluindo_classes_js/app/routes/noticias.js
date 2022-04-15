@@ -27,7 +27,8 @@ module.exports = function(app){
          //a linha abaixo eu atribuo a conexão com o banco através do parametro passado
         var connection = app.config.dbConnection();
 
-        var noticiasModel = app.app.models.noticiasModel;
+        // como agora no arquivo noticiasModels.js estou retornando uma função, a linha abaixo uso o operador new
+        var noticiasModel = new app.app.models.noticiasModel;
 
         noticiasModel.getNoticias(connection, function(error, result){
 
