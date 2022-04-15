@@ -30,5 +30,5 @@ module.exports = function(){
     */
 
     // usando a forma deixando as funções fora do escopo agora eu retorno apenas a function
-    return Noticias;
+    return NoticiasDAO;
 }
