@@ -1,7 +1,7 @@
 
 // passando a conexao como parametro da classe volta na classe onde instancia ela e ja passsa o valor de instancia
 function Noticias(connection){
-    // reaproveitando o código de instancia, para não passar toda vez a conexão
+    // reaproveitando o código de instancia, para não passar toda vez a conexão pela function
     this._connection = connection;
 }
 
