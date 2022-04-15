@@ -17,7 +17,7 @@ module.exports = function(application){
         var noticiasModel = new application.app.models.noticiasModel;
 
         // 2º recuperar a model
-        noticiasModel.salvarNoticia(noticia, connection, function(error, result){
+        noticiasModel.salvarNoticia(noticia, function(error, result){
             // a linha abaixo retorna para a rota que exibe as noticias
             //res.render("noticias/noticias", {noticia : result });
             // a linha abaixo permite redirecionar a rota

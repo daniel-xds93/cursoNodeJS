@@ -1,9 +1,11 @@
 module.exports = function(app){
     app.get('/noticia', function(req, res){
         var connection = app.config.dbConnection();
-        var noticiasModel = app.app.models.noticiasModel;
 
-        noticiasModel.getNoticia(connection, function(error, result){
+        // incluir a connection como parametro apos instanciar a classe noticiasModel
+        var noticiasModel = new app.app.models.noticiasModel(connection);
+
+        noticiasModel.getNoticia(function(error, result){
             res.render("noticias/noticia", {noticia : result });
         });
     })

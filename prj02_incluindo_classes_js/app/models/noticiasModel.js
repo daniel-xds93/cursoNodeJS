@@ -1,15 +1,20 @@
-function Noticias(){}
 
-Noticias.prototype.getNoticias = function(connection, callback){
-    connection.query('select * from noticias', callback);
+// passando a conexao como parametro da classe volta na classe onde instancia ela e ja passsa o valor de instancia
+function Noticias(connection){
+    // reaproveitando o código de instancia, para não passar toda vez a conexão
+    this._connection = connection;
 }
 
-Noticias.prototype.getNoticia = function(connection, callback){
-    connection.query('select * from noticias where id_noticia = 2', callback);
+Noticias.prototype.getNoticias = function(callback){
+    this._connection.query('select * from noticias', callback);
 }
 
-Noticias.prototype.salvarNoticia = function(noticia, connection, callback){
-    connection.query('insert into noticias set ? ', noticia, callback);
+Noticias.prototype.getNoticia = function(callback){
+    this._connection.query('select * from noticias where id_noticia = 2', callback);
+}
+
+Noticias.prototype.salvarNoticia = function(noticia, callback){
+    this._connection.query('insert into noticias set ? ', noticia, callback);
 }
 
 
