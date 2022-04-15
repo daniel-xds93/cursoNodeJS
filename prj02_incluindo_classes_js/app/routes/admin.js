@@ -14,7 +14,7 @@ module.exports = function(application){
         var connection = application.config.dbConnection();
 
         // como estou retornando uma função aqui uso também o new para instanciar
-        var noticiasModel = new application.app.models.noticiasModel(connection);
+        var noticiasModel = new application.app.models.NoticiasDAO(connection);
 
         // 2º recuperar a model
         noticiasModel.salvarNoticia(noticia, function(error, result){

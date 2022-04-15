@@ -28,7 +28,7 @@ module.exports = function(app){
         var connection = app.config.dbConnection();
 
         // como agora no arquivo noticiasModels.js estou retornando uma função, a linha abaixo uso o operador new
-        var noticiasModel = new app.app.models.noticiasModel(connection);
+        var noticiasModel = new app.app.models.NoticiasDAO(connection);
 
         noticiasModel.getNoticias(function(error, result){
 

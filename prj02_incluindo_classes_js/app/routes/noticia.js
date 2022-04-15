@@ -3,7 +3,7 @@ module.exports = function(app){
         var connection = app.config.dbConnection();
 
         // incluir a connection como parametro apos instanciar a classe noticiasModel
-        var noticiasModel = new app.app.models.noticiasModel(connection);
+        var noticiasModel = new app.app.models.NoticiasDAO(connection);
 
         noticiasModel.getNoticia(function(error, result){
             res.render("noticias/noticia", {noticia : result });
