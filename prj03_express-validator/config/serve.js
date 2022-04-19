@@ -8,6 +8,7 @@ var bodyParser = require('body-parser');
 
 // a linha abaixo faz o require do express-validator
 var expressValidator = require('express-validator');
+const { check } = require('express-validator');
 
 // a linha abaixo executa a função do express
 var app = express();
@@ -23,6 +24,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 // a linha abaixo faz a inclusão do express-validator
 //app.use(expressValidator(''));
+app.use(check());
 
 // inclusão do diretório routes deve ser feito após a execusao do express
 consign()
