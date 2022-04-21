@@ -25,7 +25,7 @@ module.exports = function(application){
 
         if(!erros.isEmpty()){
             //  a linha abaixo no segundo parametro estou passando para a view o jSon com as informaçoes do erro
-            res.render('admin/form_add_noticia', { validacao : erros.array() });
+            res.render('admin/form_add_noticia', { validacao : erros.array()});
             return;
         }
 
