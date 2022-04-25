@@ -2,7 +2,8 @@ const { check, validationResult } = require('express-validator');
 
 module.exports = function(application){
     application.get('/formulario_inclusao_noticia', function(req, res){
-        res.render('admin/form_add_noticia', {validacao : {}, noticia : {} });
+        // para fazer isso deve-se incluir o modulo lá no arquivo server.js
+        application.app.controllers.admin.formulario_inclusao_noticia(application, req, res);
     });
 
     // a função abaixo é a rota para salvar os dados no bando 
