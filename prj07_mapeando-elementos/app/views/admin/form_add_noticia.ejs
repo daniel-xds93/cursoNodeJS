@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+	<html lang="pt-br">
+		<head>
+			<meta charset="utf-8"/>
+			<title>Formulário de cadastro de Notícia</title>
+		</head>
+	<body>
+
+		<h1>Adicionar notícia</h1>
+
+		<!-- a linha abaixo esta a configuração da variavel de validação que foi retornada -->
+		<% if(validacao){ %>
+			<ul>
+				<% for(var i=0;i < validacao.length;i++){%>
+					<li>
+						<%= validacao[i].msg %>
+					</li>
+				<% } %>
+			</ul>
+		<% } %>	
+
+		<form action="/noticias/salvar" method="post">
+			<label>Título</label>
+			<input type="text" id="titulo" value="<%= noticia.titulo %>" name="titulo" placeholder="Título da Notícia">
+			<br>
+
+			<label>Resumo</label>
+			<input type="text" id="resumo" name="resumo" value="<%= noticia.resumo %>" placeholder="Resumo">
+			<br>
+
+			<label>Nome autor</label>
+			<input type="text" id="autor" name="autor" value="<%= noticia.autor %>" placeholder="Ex: Daniel">
+			<br>
+
+			<label>Data dos fatos</label>
+			<input type="date" id="data_noticia" name="data_noticia" value="<%= noticia.data_noticia %>" placeholder="Ex: 06/03/2022">
+			<br>
+
+			<label>Notícia</label>
+			<textarea id="noticia" name="noticia" rows="5" cols="30"><%= noticia.noticia %></textarea>
+			<br>
+			<input type="submit" value="Enviar">
+		</form>
+
+	</body>
+</html>
