@@ -19,6 +19,9 @@ app.set('view engine', 'ejs');
 // a linha abaixo configura o diretorio de views padrão
 app.set('views', './app/views');
 
+// mapeando arquivos staticos
+app.use(express.static('./app/public/'));
+
 // a linha abaixo executa o body-parser e a execusão deve ser feita antes das linhas de rotas
 app.use(bodyParser.urlencoded({extended: true}));
 
