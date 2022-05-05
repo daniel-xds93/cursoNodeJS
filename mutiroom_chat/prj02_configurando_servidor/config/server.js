@@ -16,8 +16,16 @@ var app = express()
 // setar as variaveis 'view engine' e 'views' do express -> configuração do ejs
 app.set('view engine', 'ejs');
 // a propriedade view indica onde as views estão
-app.set('views', './app/views'); 
+app.set('views', './app/views');
 
+// configurando middleware -> a propriedade static do express express.static
+app.use(express.static('./app/public'));
+
+// configurando o middleware body-parse
+app.use(bodyParser.urlencoded({extended: true}));
+
+// configurando o middleware express-validator
+app.use(expressValidator());
 
 // exportando o objeto
 module.exports = app;
