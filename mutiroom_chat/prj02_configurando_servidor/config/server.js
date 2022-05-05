@@ -27,5 +27,12 @@ app.use(bodyParser.urlencoded({extended: true}));
 // configurando o middleware express-validator
 app.use(expressValidator());
 
+// configurando auto-load do consign
+consign()
+    .include('app/routes')
+    .then('app/models')
+    .then('app/controllers')
+    .into(app);
+
 // exportando o objeto
 module.exports = app;
